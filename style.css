@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#050505; color:#fff; font-family:'JetBrains Mono', monospace; overflow:hidden; }
+
+/* Background Animation */
+.bg-animation {
+    position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
+    background: radial-gradient(circle at center, #1a0000 0%, #000 100%);
+}
+
+/* Advanced Splash with Neural Animation */
+#splash-screen {
+    position:fixed; width:100%; height:100%; background:#000;
+    z-index:9999; display:flex; justify-content:center; align-items:center;
+}
+.neural-loader { text-align:center; }
+.circle {
+    position:absolute; width:200px; height:200px; border:2px solid #ff0000;
+    border-radius:50%; animation: orbit 2s linear infinite; opacity:0.3;
+}
+@keyframes orbit { from {transform:rotate(0deg) scale(1);} to {transform:rotate(360deg) scale(1.2);} }
+
+.glitch {
+    font-size:3rem; font-family:'Orbitron'; color:#ff0000;
+    text-shadow: 2px 2px #550000; animation: pulse 1.5s infinite;
+}
+
+/* Sidebar */
+#sidebar {
+    position:fixed; left:-280px; width:260px; height:100%;
+    background:rgba(10,0,0,0.9); border-right:1px solid #ff0000;
+    transition:0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index:1000;
+}
+#sidebar.active { left:0; }
+.nav-links li { 
+    padding:20px; cursor:pointer; border-bottom:1px solid #200; 
+    transition:0.3s; color:#666;
+}
+.nav-links li:hover, .nav-links li.active { color:#ff0000; background:rgba(255,0,0,0.1); }
+
+/* Neon Cards */
+.neon-card {
+    background:rgba(20,0,0,0.5); border:1px solid #ff0000;
+    padding:25px; border-radius:15px; text-align:center;
+    box-shadow: 0 0 15px rgba(255,0,0,0.2);
+}
+.neon-card span { display:block; font-size:2.5rem; font-family:'Orbitron'; color:#ff0000; }
+
+.glass-input {
+    background:rgba(255,255,255,0.03); backdrop-filter:blur(10px);
+    padding:25px; border-radius:20px; margin:20px; border:1px solid rgba(255,0,0,0.1);
+}
+
+input, select {
+    width:100%; padding:15px; margin:10px 0; background:#111;
+    border:1px solid #300; color:#ff0000; border-radius:5px;
+}
+
+.neon-btn {
+    width:100%; padding:18px; background:none; border:2px solid #ff0000;
+    color:#ff0000; font-weight:bold; cursor:pointer;
+    box-shadow: 0 0 10px #ff0000; transition:0.3s;
+}
+.neon-btn:hover { background:#ff0000; color:#000; }
+
+.hidden { display:none; }
